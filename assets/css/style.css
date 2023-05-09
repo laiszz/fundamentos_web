@@ -63,9 +63,10 @@ footer {
     display: flex;
     align-items: center;
     padding: 1.25rem;
-    background-color: var(--cor4);
     border-radius: 1rem;
     gap: 1.25rem;
+
+    background-color: var(--cor4);
 }
 
 #section-video {
@@ -78,6 +79,7 @@ footer {
 
 #texto-footer {
     padding-bottom: 1rem;
+
     color: var(--fonte-clara);
 }
 
@@ -97,6 +99,7 @@ footer {
 
 .titulo {
     padding-left: 2rem;
+
     font-family: var(--fonte-cursive);
     font-size: 1.5rem;
     font-weight: 700;
@@ -106,6 +109,7 @@ footer {
 
 .foto {
     width: 20vw;
+
     border-radius: 1.25rem;
     box-shadow: 2px 2px 5px var(--sombra);
 }
@@ -130,6 +134,7 @@ footer {
 /* Elementos */
 p {
     margin-bottom: 1rem;
+
     font-family: var(--fonte-normal);
     color: var(--fonte-escura);
 }
@@ -176,6 +181,7 @@ ul {
     align-items: center;
     list-style: none;
     gap: 1rem;
+
     font-size: 1.5rem;
 }
 
@@ -188,6 +194,7 @@ input, textarea, button {
     margin-top: 0.25rem;
     padding: 0.5rem 1rem;
     width: 100%;
+    
     border-radius: 0.75rem;
     font-family: var(--fonte-cursive);
     font-size: 1rem;
