@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* Variáveis */
+:root {
+    /* Paleta de Cores */
+    --cor1: #FCD6F9;
+    --cor2: #FFC6FE;
+    --cor3: #F6B2FF;
+    --cor4: #CEAFFF;
+    --cor5: #C19BFF;
+
+    /* Fontes */
+    --fonte-cursive: "lato", cursive;
+    --fonte-normal: "lato", Roboto;
+
+    /* Cores especiais */
+    --sombra: #4c0066;
+    --fonte-escura: black;
+    --fonte-clara: white;
+}
+
+/* Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor1);
+}
+
+nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    padding: 2.25rem 1.5rem;
+
+    font-size: 1.5rem;
+    background-color: var(--cor5);
+    box-shadow: 2px 2px 5px var(--sombra);
+}
+
+main {
+    margin: 0 auto;
+    width: 80vw;
+}
+
+footer {
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 80vw;
+    text-align: center;
+
+    background-color: var(--cor5);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+/* IDs */
+#sobre {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    background-color: var(--cor4);
+    border-radius: 1rem;
+    gap: 1.25rem;
+}
+
+#section-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+#texto-footer {
+    padding-bottom: 1rem;
+    color: var(--fonte-clara);
+}
+
+/* Classes */
+.logo {
+    display: flex;
+    justify-content: left;
+    position: relative;
+    align-items: center;
+    width: 20vw;
+}
+
+.icone {
+    width: 5rem;
+    padding-left: 1rem;
+}
+
+.titulo {
+    padding-left: 2rem;
+    font-family: var(--fonte-cursive);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--fonte-clara);
+    letter-spacing: 0.075rem;
+}
+
+.foto {
+    width: 20vw;
+    border-radius: 1.25rem;
+    box-shadow: 2px 2px 5px var(--sombra);
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding-top: 5rem;
+}
+
+.imagem-footer {
+    width: 3%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Elementos */
+p {
+    margin-bottom: 1rem;
+    font-family: var(--fonte-normal);
+    color: var(--fonte-escura);
+}
+
+h1, h2, h3, a {
+    font-family: var(--fonte-cursive);
+    font-weight: 600;
+    color: var(--fonte-escura);
+    letter-spacing: 0.075rem;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+h1 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: left;
+
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    margin-bottom: 2rem;
+
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a {
+    color: var(--fonte-clara);
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+label {
+    font-family: var(--fonte-cursive);
+    font-size: 1.25rem;
+}
+
+input, textarea, button {
+    margin-top: 0.25rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border-radius: 0.75rem;
+    font-family: var(--fonte-cursive);
+    font-size: 1rem;
+    color: var(--fonte-escura);
+    border: 1px solid var(--cor5);
+}
+
+button {
+    background-color: var(--cor4);
+    color: var(--fonte-clara);
+}
+
+hr {
+    margin: 2rem;
+}
+
+/* Atributos de elementos */
+button:hover {
+    background-color: var(--cor5);
+}
+
+input:focus, textarea:focus, button:focus {
+    outline: none;
+    border: 2px solid var(--cor5);
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--cor5);
+}
