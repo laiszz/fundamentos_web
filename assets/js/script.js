@@ -98,14 +98,14 @@ function consultarCEP(){
     // Colocando o CEP digitado no site de consulta
     const url = `https://viacep.com.br/ws/${cep.value}/json/`
 
-    console.log(url)
     // Busca o CEP no site
     fetch(url)
     // Pega o formato json da resposta
-    .then((response) => resposta.json())
+    .then((resposta) => resposta.json())
     // Mostra a resposta no formulário
     .then((jsonBody) => {
-        document.getElementById("endereco").innerHTML = jsonBody.logradouro + 
+        document.getElementById("endereco").innerHTML = 
+            jsonBody.logradouro + 
             "\n" + 
             jsonBody.bairro +
             "\n" + 
