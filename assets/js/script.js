@@ -91,3 +91,28 @@ function enviarFormulario(){
         alert("O formulário não foi preenchido corretamente! 😔")
     }
 }
+
+// Função chamada ao clicar no botão de Consultar
+function consultarCEP(){
+    const cep = document.querySelector("#cep")
+    // Colocando o CEP digitado no site de consulta
+    const url = `https://viacep.com.br/ws/${cep.value}/json/`
+
+    console.log(url)
+    // Busca o CEP no site
+    fetch(url)
+    // Pega o formato json da resposta
+    .then((response) => resposta.json())
+    // Mostra a resposta no formulário
+    .then((jsonBody) => {
+        document.getElementById("endereco").innerHTML = jsonBody.logradouro + 
+            "\n" + 
+            jsonBody.bairro +
+            "\n" + 
+            jsonBody.localidade +
+            "\n" + 
+            jsonBody.uf
+    })
+    // Mostra um aviso caso o CEP não exista
+    .catch((error) => alert("CEP não encontrado!"))
+}
