@@ -46,7 +46,7 @@
                 </div>
                 <div class="campos-form">
                     <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" type="text" rows="8" placeholder="Digite aqui sua mensagem"></textarea>
+                    <textarea oninput="validarMensagem()" id="mensagem" type="text" rows="8" placeholder="Digite aqui sua mensagem"></textarea>
                     <div id="txtMensagem"></div>
                 </div>
                 <button onclick="enviarFormulario()" type="button">Enviar</button>
@@ -57,7 +57,7 @@
                 <h3>Não sabe o seu CEP?</h3>
                 <div class="campos-form">
                     <label for="cep">CEP:</label>
-                    <input id="cep" type="text" placeholder="12345-678"> 
+                    <input oninput="validarCepRegex()" id="cep" type="text" placeholder="12345-678"> 
                     <div id="txtCep"></div>
                 </div>
                 <button onclick="consultarCEP()" type="button">Consultar</button>

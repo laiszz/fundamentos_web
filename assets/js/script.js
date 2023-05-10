@@ -2,6 +2,7 @@
 let nomeOk = false
 let emailOk = false
 let mensagemOk = false
+let cepOk = false
 
 // Validação do Nome
 function validarNome(){
@@ -74,9 +75,34 @@ function validarMensagem(){
         txtMensagem.style.color = "red"
         mensagemOk = false
     }
+    else if (mensagem.value.length === 0) {
+        txtMensagem.innerHTML = "Digite uma mensagem!"
+        txtMensagem.style.color = "red"
+        mensagemOk = false
+    }
     else{
         txtMensagem.innerHTML = "✅"
         mensagemOk = true
+    }
+}
+
+// Validação de CEP
+function validarCepRegex(){
+    // Regra de comparação
+    let regex = /^[0-9]{5}-[0-9]{3}$/
+
+    const cep = document.querySelector("#cep")
+    let txtCep = document.querySelector("#txtCep")
+
+    // Se o valor digitado NÃO está de acordo com a regra
+    if (!cep.value.match(regex)){
+        txtCep.innerHTML = "CEP inválido!"
+        txtCep.style.color = "red"
+        cepOk = false
+    }
+    else{
+        txtCep.innerHTML = "✅"
+        cepOk = true
     }
 }
 
@@ -94,25 +120,39 @@ function enviarFormulario(){
 
 // Função chamada ao clicar no botão de Consultar
 function consultarCEP(){
-    const cep = document.querySelector("#cep")
-    // Colocando o CEP digitado no site de consulta
-    const url = `https://viacep.com.br/ws/${cep.value}/json/`
+    // Se a validação deu certo
+    if (cepOk === true){
+        const cep = document.querySelector("#cep")
+        // Colocando o CEP digitado no site de consulta
+        const url = `https://viacep.com.br/ws/${cep.value}/json/`
 
-    // Busca o CEP no site
-    fetch(url)
-    // Pega o formato json da resposta
-    .then((resposta) => resposta.json())
-    // Mostra a resposta no formulário
-    .then((jsonBody) => {
-        document.getElementById("endereco").innerHTML = 
-            jsonBody.logradouro + 
-            "\n" + 
-            jsonBody.bairro +
-            "\n" + 
-            jsonBody.localidade +
-            "\n" + 
-            jsonBody.uf
-    })
-    // Mostra um aviso caso o CEP não exista
-    .catch((error) => alert("CEP não encontrado!"))
+        // Busca o CEP no site
+        fetch(url)
+        // Pega o formato json da resposta
+        .then((resposta) => resposta.json())
+        // Mostra a resposta no formulário
+        .then((jsonBody) => {
+            // Se não ocorreu erro -- Ou seja, encontrou o CEP!
+            if (jsonBody.erro === undefined){
+                // Preenche a textarea Endereço
+                document.getElementById("endereco").innerHTML = 
+                jsonBody.logradouro + 
+                "\n" + 
+                jsonBody.bairro +
+                "\n" + 
+                jsonBody.localidade +
+                "\n" + 
+                jsonBody.uf
+            }
+            else{
+                // Mostra um aviso caso o CEP não exista
+                alert("CEP não encontrado! 😔")
+            }
+        })
+        // Mostra um aviso caso ocorra um erro na busca ou no site
+        .catch((error) => alert("Erro ao buscar CEP! 😔"))
+    }
+    else {
+        alert("O CEP não foi preenchido corretamente! 😔")
+    }
 }
