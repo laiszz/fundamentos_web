@@ -7,7 +7,6 @@
     <title>Portfólio da Laís</title>
     <link rel="icon" type="image/png" href="assets/images/lais_ico.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="./assets/js/script.js"></script>
 </head>
 <body>
     <!-- Menu da Página -->
@@ -37,12 +36,12 @@
                 <h3>Contato:</h3>
                 <div class="campos-form">
                     <label for="nome">Nome:</label>
-                    <input id="nome" type="text" placeholder="Nome Sobrenome"> 
+                    <input oninput="validarNome()" id="nome" type="text" placeholder="Nome Sobrenome"> 
                     <div id="txtNome"></div>
                 </div>
                 <div class="campos-form">
                     <label for="email">E-mail:</label>
-                    <input id="email" type="text" placeholder="email@email.com"> 
+                    <input oninput="validarEmailRegex()" id="email" type="text" placeholder="email@email.com"> 
                     <div id="txtEmail"></div>
                 </div>
                 <div class="campos-form">
@@ -50,7 +49,7 @@
                     <textarea id="mensagem" type="text" rows="8" placeholder="Digite aqui sua mensagem"></textarea>
                     <div id="txtMensagem"></div>
                 </div>
-                <button type="button">Enviar</button>
+                <button onclick="enviarFormulario()" type="button">Enviar</button>
             </form>
 
             <!-- Formulário da Direita -->
@@ -85,5 +84,8 @@
         </a>
         <p id="texto-footer">Desenvolvido por: Laís Sales - 2023 &copy;</p>
     </footer>
+
+    <!-- JS da página -->
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

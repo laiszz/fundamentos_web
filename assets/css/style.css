@@ -77,6 +77,10 @@ footer {
     gap: 2rem;
 }
 
+#txtNome, #txtEmail, #txtMensagem, #txtCep, #txtEndereco {
+    font-family: var(--fonte-cursive);
+}
+
 #texto-footer {
     padding-bottom: 1rem;
 
